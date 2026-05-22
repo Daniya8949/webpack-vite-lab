@@ -18,7 +18,7 @@ jobs:
       - name: Сборка Webpack
         run: |
           cd webpack-project
-          npm ci
+          npm install
           npm run build
       
       - name: Сохранение артефактов
@@ -28,6 +28,7 @@ jobs:
           path: webpack-project/dist
           compression-level: 0  # v4 требует явного указания (опционально)
           overwrite: true       # для перезаписи артефактов
+
 
   build-vite:
     runs-on: ubuntu-latest
